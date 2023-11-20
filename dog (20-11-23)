@@ -1,0 +1,31 @@
+class Dog:
+    def __init__(self, name, size, breed='unknown', dob='unknown'):
+        self.name = name.title()  # Convert the name to title case
+        self.size = size
+        self.breed = breed
+        self.dob = dob
+
+    def bark(self):
+        print(f"{self.name} says: bow! bow!")
+
+    def set_name(self, new_name):
+        if 2 <= len(new_name) <= 30 and new_name.isalpha():
+            self.name = new_name.title()
+            print(f"{self.name}'s name has been set successfully.")
+        else:
+            print("Invalid name. Please enter a name between 2 and 30 alphabetical characters.")
+
+    def age(self, current_year):
+        if self.dob == 'unknown':
+            print(f"The age of {self.name} cannot be calculated without a valid date of birth.")
+        else:
+            birth_year = int(self.dob.split("/")[-1])
+            dog_years = (current_year - birth_year) * 7
+            print(f"{self.name} is approximately {dog_years} dog years old.")
+
+
+dog_instance = Dog(name="Buddy", size="Medium", breed="Labrador", dob="15/05/2018")
+
+dog_instance.bark()
+dog_instance.set_name("Max")
+dog_instance.age(current_year=2023)
