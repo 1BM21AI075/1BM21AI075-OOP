@@ -1,6 +1,6 @@
 class Dog:
     def __init__(self, name, size, breed='unknown', dob='unknown'):
-        self.name = name.title()  # Convert the name to title case
+        self.name = name.title()  
         self.size = size
         self.breed = breed
         self.dob = dob
