@@ -1,0 +1,32 @@
+from abc import ABC, abstractmethod
+
+
+class Car(ABC):
+    @abstractmethod
+    def mileage(self):
+        pass
+
+
+class Sedan(Car):
+    def mileage(self):
+        return 20  
+
+
+class SUV(Car):
+    def mileage(self):
+        return 15  
+
+
+class Hatchback(Car):
+    def mileage(self):
+        return 25  
+
+
+sedan_car = Sedan()
+suv_car = SUV()
+hatchback_car = Hatchback()
+
+
+print(f"Sedan Mileage: {sedan_car.mileage()} MPG")
+print(f"SUV Mileage: {suv_car.mileage()} MPG")
+print(f"Hatchback Mileage: {hatchback_car.mileage()} MPG")
